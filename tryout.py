@@ -26,13 +26,13 @@ while running:
     when we move the plyer it keep the traces beacuse it save our history. to remove the traces we have to refill
     the screen with color.
     """
-    if key[pygame.K_a] == True:
+    if key[pygame.K_a] == True and player.left > 0:
         player.move_ip(-1,0)
-    elif key[pygame.K_d] == True:
+    elif key[pygame.K_d] == True and player.right < SCREEN_WIDTH:
         player.move_ip(1,0)
-    elif key[pygame.K_w] == True:
+    elif key[pygame.K_w] == True and player.top > 0:
         player.move_ip(0,-1)
-    elif key[pygame.K_s] == True:
+    elif key[pygame.K_s] == True and player.bottom < SCREEN_HEIGHT:
         player.move_ip(0,1)
     # event handler
     for event in pygame.event.get():
